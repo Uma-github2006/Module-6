@@ -1,44 +1,62 @@
 # Exp.No:28  
 ## Abstraction
 
----
-
 ### AIM  
-To write a Python program to define the abstract base class named `Polygon` and also define the abstract method. This base class is inherited by various subclasses. Implement the abstract method in each subclass. Create objects of the subclasses and invoke the `sides()` method.
+To implement abstraction using an abstract class and demonstrate method overriding through inheritance.
 
----
 
 ### ALGORITHM
 
-1. **Start the Program.**
-2. **Import the ABC class** from the `abc` module to implement abstraction.
-3. **Define the abstract base class Polygon**:
-   - Inherit from `ABC` (Abstract Base Class).
-   - Define an abstract method `sides()` with no implementation.
-4. **Define the Triangle class** that inherits from `Polygon`:
-   - Implement the `sides()` method to print `"Triangle has 3 sides"`.
-5. **Define the Pentagon class** that inherits from `Polygon`:
-   - Implement the `sides()` method to print `"Pentagon has 5 sides"`.
-6. **Define the Hexagon class** that inherits from `Polygon`:
-   - Implement the `sides()` method to print `"Hexagon has 6 sides"`.
-7. **Define the Square class** that inherits from `Polygon`:
-   - Implement the `sides()` method to print `"I have 4 sides"`.
-8. **Create an object `t` of the Triangle class** and call the `sides()` method to print the number of sides.
-9. **Create an object `s` of the Square class** and call the `sides()` method to print the number of sides.
-10. **Create an object `p` of the Pentagon class** and call the `sides()` method to print the number of sides.
-11. **Create an object `k` of the Hexagon class** and call the `sides()` method to print the number of sides.
-12. **End the Program.**
+1.Define an Abstract Class Bank:
+   Import ABC and abstractmethod from the abc module.
+   Define an abstract class Bank that inherits from ABC (abstract base class).
+   Define an abstract method bank_info() which is not implemented in the Bank class (it is only defined).
+   Optionally, define a concrete method interest() which provides a default implementation.
+2.Define a Subclass SBI that Inherits from Bank:
+   Create a subclass SBI that inherits from the abstract class Bank.
+   Implement the bank_info() method in the SBI class (providing specific information related to the bank).
+   Implement the interest() method in the SBI class to provide the interest rate specific to the bank.
+3.Create an Object of SBI:
+   Create an instance of the SBI class and call the implemented methods bank_info() and interest() to display the respective information.
+4.Run the Program:
+   When the object is created, the program will display the bank information and the interest rate specific to SBI.
 
----
 
 ### PROGRAM
 
 ```
+from abc import ABC, abstractmethod
 
+#Abstract Class
+class Bank(ABC):
+    
+    
+    @abstractmethod
+    def bank_info(self):
+        pass
+  
+    def interest(self):
+        pass
+   
+class SBI(Bank):
+    
+    def bank_info(self):
+         print("Welcome to bank")
+
+    def interest(self):
+        print("In sbi bank 5 rupees interest")
+       
+
+s=SBI()
+s.bank_info()
+s.interest()
 
 ```
 
 ### OUTPUT
+![image](https://github.com/user-attachments/assets/f74034ee-0db5-40ed-bf5f-d3ac4ec11628)
+
 
 
 ### RESULT
+Thus the abstract class Bank is implemented and executed successfully.
