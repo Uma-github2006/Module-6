@@ -1,12 +1,9 @@
 # Exp.No:26  
 ## Method Overriding
 
----
-
 ### AIM  
 To write a Python program to create a Parent class `Bird` and inherit two child classes `Sparrow` and `Ostrich` from the `Bird` class with the same method `flight()`. Create an object for each class and call the methods of the class which will print the name of the bird that is flying.
 
----
 
 ### ALGORITHM
 
@@ -29,15 +26,45 @@ To write a Python program to create a Parent class `Bird` and inherit two child 
 9. **Call the `flight()` method** on each object (`obj_bird`, `obj_spr`, `obj_ost`) to display the respective messages.
 10. **Terminate the program.**
 
----
-
 ### PROGRAM
 
 ```
+class Bird:
+    def intro(self):
+        print("There are many types of birds.")
+	
+    def flight(self):
+        print("Most of the birds can fly but some cannot.")
+
+class sparrow(Bird):
+    def flight(self):
+        print("Sparrows can fly.")
+	
+class ostrich(Bird):
+    def flight(self):
+        print("Ostriches cannot fly.")
+	
+obj_bird = Bird()
+obj_spr = sparrow()
+obj_ost = ostrich()
+
+obj_bird.intro()
+obj_bird.flight()
+
+obj_spr.intro()
+obj_spr.flight()
+
+obj_ost.intro()
+obj_ost.flight()
+
 
 ```
 
 ### OUTPUT
+![image](https://github.com/user-attachments/assets/43298eb4-91e3-47c9-b222-646b4a7669b4)
+
 
 
 ### RESULT
+Thus the  Python program to create a Parent class `Bird` and inherit two child classes `Sparrow` and `Ostrich` from the `Bird` class with the same method `flight()`
+ is implemented and executed successfully.
